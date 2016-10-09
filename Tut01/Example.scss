@@ -1,0 +1,71 @@
+// Signle line comment
+
+/* Multiple comments */
+
+/*
+|--------------------------------------------------------------------------
+| Variables: Example01
+|--------------------------------------------------------------------------
+*/
+
+$primaryColor: #eeffcc;
+
+body {
+    background: $primaryColor;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Variables: Example02
+|--------------------------------------------------------------------------
+*/
+
+$primaryColor: #eeccff;
+
+body {
+  $primaryColor: #ccc;
+  background: $primaryColor;
+}
+
+p {
+  color: $primaryColor;
+}
+
+// When compiled, our paragraph selector's color is #eeccff
+
+/*
+|--------------------------------------------------------------------------
+| Variables: Example03
+|--------------------------------------------------------------------------
+*/
+
+$primaryColor: #eeccff;
+
+body {
+  $primaryColor: #ccc !global;
+  background: $primaryColor;
+}
+
+p {
+  color: $primaryColor;
+}
+
+// When compiled, our paragraph selector's color is #ccc
+
+/*
+|--------------------------------------------------------------------------
+| Variables: Example04
+|--------------------------------------------------------------------------
+|This allows us to make sure there is a default value for a variable in the event that one is not provided.
+*/
+
+$firstValue: 62.5%;
+
+$firstValue: 24px !default;
+
+body {
+    font-size: $firstValue;
+}
+
+// body font size = 62.5%
+
