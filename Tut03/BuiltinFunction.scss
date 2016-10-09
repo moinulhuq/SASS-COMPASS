@@ -1,0 +1,41 @@
+/*
+|--------------------------------------------------------------------------
+| SASS built in functions
+|--------------------------------------------------------------------------
+*/
+
+/*
+|--------------------------------------------------------------------------
+| Math: Example01
+|--------------------------------------------------------------------------
+*/
+
+$firstDivColor: #eeffcc;
+$SecondDivColor: darken( $firstDivColor, 10% );
+$thirdDivColor: lighten( $firstDivColor, 10% );
+
+div1 {
+    background: $firstDivColor;
+}
+
+div2 {
+    background: $SecondDivColor;
+}
+
+div3 {
+    background: $thirdDivColor
+}
+
+// After compilation 
+
+div1 {
+  background: #eeffcc; 
+}
+
+div2 {
+  background: #ddff99; 
+}
+
+div3 {
+  background: white; 
+}
