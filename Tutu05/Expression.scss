@@ -1,0 +1,116 @@
+/*
+|--------------------------------------------------------------------------
+| SASS Expression
+|--------------------------------------------------------------------------
+*/
+
+/*
+|--------------------------------------------------------------------------
+| IF(): Example01
+|--------------------------------------------------------------------------
+*/
+
+p{
+    @if 10 + 10 == 20   { border: 1px dotted;   }
+    @if 7 < 2     		{ border: 2px solid;  }
+    @if null    		{ border: 3px double; }
+}
+
+// Output
+
+p {
+  border: 1px dotted; 
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| IF() and ELSE IF(): Example02
+|--------------------------------------------------------------------------
+*/
+
+$type: audi;
+
+p {
+
+  @if $type == benz 
+  	{ color: red; } 
+
+  @else if $type == mahindra 
+  	{ color: blue;} 
+
+  @else if $type == audi 
+  	{ color: green;} 
+
+  @else 			
+  	{ color: black;}
+
+}
+
+// Output
+
+p {
+  color: green; 
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| FOR Loop: Example03
+|--------------------------------------------------------------------------
+*/
+
+@for $i from 1 through 4 {
+  .p#{$i} { padding-left : $i * 10px; }
+}
+
+// Output
+
+.p1 {
+  padding-left: 10px; 
+}
+
+.p2 {
+  padding-left: 20px; 
+}
+
+.p3 {
+  padding-left: 30px; 
+}
+
+.p4 {
+  padding-left: 40px; 
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Foreach Loop: Example04
+|--------------------------------------------------------------------------
+*/
+
+$colors: red, green, yellow, blue;
+
+@each $color in $colors{
+  .p_#{$color} {
+    background-color: #{$color};
+  }
+}
+
+// Output
+
+.p_red {
+  background-color: red; 
+}
+
+.p_green {
+  background-color: green; 
+}
+
+.p_yellow {
+  background-color: yellow; 
+}
+
+.p_blue {
+  background-color: blue; 
+}
