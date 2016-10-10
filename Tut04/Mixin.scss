@@ -1,0 +1,237 @@
+/*
+|--------------------------------------------------------------------------
+| SASS Mixin Directive
+|--------------------------------------------------------------------------
+*/
+
+/*
+|--------------------------------------------------------------------------
+| Mixin: Example01
+|--------------------------------------------------------------------------
+| To create a mixin you use the @mixin directive.
+*/
+
+@mixin sample {
+  font-size: 12px;
+}
+
+p{
+	@include sample;
+}
+
+//Output
+
+p {
+  font-size: 12px; 
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Mixin: Example02
+|--------------------------------------------------------------------------
+*/
+
+$font-size: 12px;
+
+@mixin sample {
+  font-size: $font-size;
+}
+
+p{
+	@include sample;
+}
+
+//Output
+
+p {
+  font-size: 12px; 
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Mixin: Example03
+|--------------------------------------------------------------------------
+| mixin with arguments.
+|
+*/
+
+@mixin paragraph($color, $size) {
+  color: $color;
+  font-size: $size;
+}
+
+p {
+  @include paragraph(red, 12px);
+}
+
+//Output
+
+p {
+  color: red;
+  font-size: 12px;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Mixin: Example04
+|--------------------------------------------------------------------------
+| mixin with default arguments.
+|
+*/
+
+@mixin paragraph($size, $color:red) {
+  color: $color;
+  font-size: $size;
+}
+
+p {
+  @include paragraph(12px);
+}
+
+p {
+  @include paragraph(12px, green);
+}
+
+//Output
+
+p {
+  color: red;
+  font-size: 12px; 
+}
+
+p {
+  color: green;
+  font-size: 12px; 
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Mixin: Example05
+|--------------------------------------------------------------------------
+| mixin arguments could be place in any order.
+|
+*/
+
+@mixin paragraph($size, $color:red) {
+  color: $color;
+  font-size: $size;
+}
+
+p {
+  @include paragraph($color: blue, $size: 12px);
+}
+
+//Output
+
+p {
+  color: blue;
+  font-size: 12px; 
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Mixin: Example06
+|--------------------------------------------------------------------------
+| mixin with variable arguments.
+|
+*/
+
+@mixin paragraph($pads...) {
+	padding: $pads;
+}
+
+p {
+  @include paragraph(10px);
+}
+
+p {
+  @include paragraph(10px 20px);
+}
+
+p {
+  @include paragraph(10px 20px 30px);
+}
+
+p {
+  @include paragraph(10px 20px 30px 40px);
+}
+
+//Output
+
+p {
+  padding: 10px; }
+
+p {
+  padding: 10px 20px; }
+
+p {
+  padding: 10px 20px 30px; }
+
+p {
+  padding: 10px 20px 30px 40px; }
+
+
+/*
+|--------------------------------------------------------------------------
+| Mixin: Example07
+|--------------------------------------------------------------------------
+| pass a block of styles .
+|
+*/
+
+@mixin cont {
+  background-color: black;
+  color: white;
+
+  @content;
+}
+
+P{
+
+ @include cont{
+   font-size: 12px;
+   font-style: italic;
+ }
+
+}
+
+//Output
+
+P {
+  background-color: black;
+  color: white;
+  font-size: 12px;
+  font-style: italic; 
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Mixin: Example08
+|--------------------------------------------------------------------------
+| pass a block of styles .
+|
+*/
+
+@mixin cont {
+  @content;
+}
+
+ @include cont{
+ 	.block{
+   		font-size: 12px;
+   		font-style: italic;
+   }
+ }
+
+//Output
+
+.block {
+  font-size: 12px;
+  font-style: italic; 
+}
