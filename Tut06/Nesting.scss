@@ -1,0 +1,68 @@
+/*
+|--------------------------------------------------------------------------
+| SASS Nesting
+|--------------------------------------------------------------------------
+*/
+
+/*
+|--------------------------------------------------------------------------
+| Nesting: Example01
+|--------------------------------------------------------------------------
+*/
+
+.container {
+    width: 100%;
+    h1 {
+        color: red;
+    }
+}
+
+// Output
+
+.container {
+  width: 100%; 
+}
+
+.container h1 {
+    color: red; 
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Nesting: Example02
+|--------------------------------------------------------------------------
+| ampersand, &, to specify where the parent selector needs to be placed
+|
+*/
+
+a {
+	color: blue;
+		&:visited {
+			color: green;
+		}
+		&:hover {
+			color: red;
+		}
+		&:active {
+			color: yellow;
+		}
+}
+
+// Output
+
+a {
+  color: blue; 
+}
+
+a:visited {
+  color: green; 
+}
+
+a:hover {
+  color: red; 
+}
+
+a:active {
+  color: yellow; 
+}
