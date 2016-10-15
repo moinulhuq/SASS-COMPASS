@@ -66,3 +66,20 @@ _attach.scss
 		@import 'layout/_forms.scss';
 		@import 'layout/_header.scss';
 		@import 'layout/_sidebar.scss';
+
+app.scss
+
+		// reset to default browser
+		@import 'base/_reset.scss';
+
+		// Fonts
+		@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+
+		// Variables
+		@import "variables";
+
+		// Bootstrap
+		@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+		// All the web components
+		@import "_attach.scss";
