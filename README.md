@@ -46,3 +46,23 @@ vendors/
 	_jquery-ui.scss
 
 _attach.scss
+		@import 'base/_typography.scss';
+		@import 'base/_color.scss';
+
+		/*
+		@import 'abstracts/_functions.scss';
+		@import 'abstracts/_mixins.scss';
+		@import 'abstracts/_placeholders.scss';
+		@import 'abstracts/_variables.scss';
+		*/
+
+		@import 'components/_buttons.scss';
+		@import 'components/_cover.scss';
+		@import 'components/_dropdown.scss';
+		@import 'components/_navigation.scss';
+		@import 'components/_thumbnails.scss';
+
+		@import 'layout/_footer.scss';
+		@import 'layout/_forms.scss';
+		@import 'layout/_header.scss';
+		@import 'layout/_sidebar.scss';
