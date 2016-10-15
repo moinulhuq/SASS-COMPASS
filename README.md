@@ -46,8 +46,6 @@ vendors/
 	_jquery-ui.scss
 
 _attach.scss
-		@import 'base/_typography.scss';
-		@import 'base/_color.scss';
 
 		/*
 		@import 'abstracts/_functions.scss';
@@ -55,6 +53,8 @@ _attach.scss
 		@import 'abstracts/_placeholders.scss';
 		@import 'abstracts/_variables.scss';
 		*/
+		@import 'base/_typography.scss';
+		@import 'base/_color.scss';
 
 		@import 'components/_buttons.scss';
 		@import 'components/_cover.scss';
